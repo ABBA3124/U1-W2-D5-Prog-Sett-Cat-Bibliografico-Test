@@ -16,5 +16,10 @@ public class Libro extends ElementoCatalogo {
         this.autore = autore;
     }
 
-
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "autore='" + autore + '\'' +
+                '}';
+    }
 }

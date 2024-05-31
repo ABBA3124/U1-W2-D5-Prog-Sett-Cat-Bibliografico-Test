@@ -1,6 +1,6 @@
 package Bibliografico.entities;
 
-public class ElementoCatalogo {
+public abstract class ElementoCatalogo {
     private String isbn;
     private String titolo;
     private int annoPubblicazione;

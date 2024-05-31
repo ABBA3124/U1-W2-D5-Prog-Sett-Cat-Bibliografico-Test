@@ -17,6 +17,13 @@ public class Rivista extends ElementoCatalogo {
         this.periodicita = periodicita;
     }
 
+    @Override
+    public String toString() {
+        return "Rivista{" +
+                "periodicita=" + periodicita +
+                '}';
+    }
+
     public enum Periodicita {
         SETTIMANALE, MENSILE, SEMESTRALE
     }
