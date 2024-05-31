@@ -35,7 +35,7 @@ public class Application {
         //-----------------------Ricerca per ISBN-----------------------
 
         System.out.println("\n\t⬇️Elemento cercato per ISBN⬇️");
-        catalogo.ricercaPerIsbn("56786544").ifPresent(System.out::println);
+        catalogo.ricercaPerIsbn("56786544");
 
         //-----------------------Ricerca per Anno di Pubblicazione-----------------------
         System.out.println("\n\t⬇️Elemento cercato per Anno di Pubblicazione⬇️");

@@ -38,17 +38,24 @@ public class Catalogo {
         if (rimosso) {
             System.out.println("Elemento con ISBN " + isbn + " è stato rimosso.");
         } else {
-            System.out.println("L'ISBN: " + isbn + " Risulta Errato o Inesistente." + " Verifica L'ISBN Inserito e/o Riprova");
+            System.out.println("RIMOZIONE" + "L'ISBN: " + isbn + " Risulta Errato o Inesistente." + " Verifica L'ISBN Inserito e/o Riprova");
         }
     }
 
 
     //ricerca per ISBN
-    public Optional<ElementoCatalogo> ricercaPerIsbn(String isbn) {
-        return catalogo.stream()
+    public void ricercaPerIsbn(String isbn) {
+        Optional<ElementoCatalogo> risultato = catalogo.stream()
                 .filter(elemento -> elemento.getIsbn().equals(isbn))
                 .findFirst();
+
+        if (risultato.isPresent()) {
+            System.out.println("Elemento trovato: " + risultato.get());
+        } else {
+            System.out.println("RICERCA" + "L'ISBN: " + isbn + " Risulta Errato o Inesistente." + " Verifica L'ISBN Inserito e/o Riprova");
+        }
     }
+
 
     //ricerca per anno pubblicazione
     public List<ElementoCatalogo> ricercaPerAnnoPubblicazione(int anno) {
