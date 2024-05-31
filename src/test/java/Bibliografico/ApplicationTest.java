@@ -1,4 +1,4 @@
-package Catalogo_Bibliografico;
+package Bibliografico;
 
 import org.junit.jupiter.api.Test;
 

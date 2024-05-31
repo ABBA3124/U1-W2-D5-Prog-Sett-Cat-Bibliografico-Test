@@ -1,4 +1,4 @@
-package Catalogo_Bibliografico;
+package Bibliografico;
 
 public class Application {
 
