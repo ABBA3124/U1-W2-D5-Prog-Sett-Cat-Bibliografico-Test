@@ -1,6 +1,7 @@
 package Bibliografico;
 
 import Bibliografico.entities.ElementoCatalogo;
+import Bibliografico.entities.Libro;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,4 +45,14 @@ public class Catalogo {
                 .collect(Collectors.toList());
     }
 
+    //ricerca per autore
+    public List<Libro> ricercaPerAutore(String autore) {
+        return catalogo.stream()
+                .filter(elemento -> elemento instanceof Libro)
+                .map(elemento -> (Libro) elemento)
+                .filter(libro -> libro.getAutore().equals(autore))
+                .collect(Collectors.toList());
+    }
+
+    
 }
