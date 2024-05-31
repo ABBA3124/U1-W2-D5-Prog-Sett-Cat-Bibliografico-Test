@@ -5,6 +5,7 @@ import Bibliografico.entities.ElementoCatalogo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class Catalogo {
     private List<ElementoCatalogo> catalogo;
@@ -29,11 +30,18 @@ public class Catalogo {
         catalogo.removeIf(elemento -> elemento.getIsbn().equals(isbn));
     }
 
-    // Ricerca per ISBN
+    //ricerca per ISBN
     public Optional<ElementoCatalogo> ricercaPerIsbn(String isbn) {
         return catalogo.stream()
                 .filter(elemento -> elemento.getIsbn().equals(isbn))
                 .findFirst();
+    }
+
+    //ricerca per anno pubblicazione
+    public List<ElementoCatalogo> ricercaPerAnnoPubblicazione(int anno) {
+        return catalogo.stream()
+                .filter(elemento -> elemento.getAnnoPubblicazione() == anno)
+                .collect(Collectors.toList());
     }
 
 }
