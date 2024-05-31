@@ -84,5 +84,25 @@ public class Catalogo {
         }
     }
 
+    //carica dal disco archivio
+    public void caricaDaDisco() {
+        try {
+            File file = new File("src/main/java/Bibliografico/Archivio.txt");
+            List<String> linee = FileUtils.readLines(file, "UTF-8");
+            catalogo.clear();
+            for (String stringa : linee) {
+                String[] partiDaCaricare = stringa.split("-");
+                if (partiDaCaricare[0].equals("Libro")) {
+                    catalogo.add(new Libro(partiDaCaricare[1], partiDaCaricare[2], Integer.parseInt(partiDaCaricare[3]), Integer.parseInt(partiDaCaricare[4]), partiDaCaricare[5]));
+                } else if (partiDaCaricare[0].equals("Rivista")) {
+                    catalogo.add(new Rivista(partiDaCaricare[1], partiDaCaricare[2], Integer.parseInt(partiDaCaricare[3]), Integer.parseInt(partiDaCaricare[4]), Rivista.Periodicita.valueOf(partiDaCaricare[5])));
+                }
+            }
+            System.out.println("Archivio caricato dal disco con successo.");
+        } catch (IOException err) {
+            System.err.println("Errore durante il caricamento dell'Archivio.txt: " + err.getMessage());
+        }
+    }
+
 
 }

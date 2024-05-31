@@ -52,6 +52,11 @@ public class Application {
         catalogo.salvaSuDisco();
         catalogo.stampaCatalogo();
 
+        // -----------------------Carica dal disco-----------------------
+        System.out.println("\n\t⬇️💽Catalogo caricato dal disco💽⬇️");
+        catalogo.caricaDaDisco();
+        catalogo.stampaCatalogo();
+
 
     }
 
