@@ -19,7 +19,7 @@ public class Rivista extends ElementoCatalogo {
 
     @Override
     public String toString() {
-        return "\tRivista [" +
+        return "\tRivista📔 [" +
                 "Periodicita= " + periodicita +
                 ", ISBN= " + isbn +
                 ", Titolo=" + titolo +

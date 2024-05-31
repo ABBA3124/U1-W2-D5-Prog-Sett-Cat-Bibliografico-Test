@@ -6,12 +6,10 @@ import Bibliografico.entities.Rivista;
 public class Application {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-
         Catalogo catalogo = new Catalogo();
 
         //-----------------------Aggiunta di un elemento-----------------------
-        System.out.println("\n\t--Catalogo iniziale (vuoto)--");
+        System.out.println("\n\t⬇️Catalogo iniziale (vuoto)⬇️");
         catalogo.stampaCatalogo();
 
         //add elementi al catalogo
@@ -23,14 +21,22 @@ public class Application {
         catalogo.aggiungiElemento(new Rivista("43168944", "Focus", 2024, 52, Rivista.Periodicita.SETTIMANALE));
         catalogo.aggiungiElemento(new Rivista("78941247", "COSMOPOLITAN", 2001, 27, Rivista.Periodicita.SEMESTRALE));
 
-        System.out.println("\n\t--Catalogo una volta aggiunti elementi--");
+        System.out.println("\n\t⬇️Catalogo una volta aggiunti elementi⬇️");
         catalogo.stampaCatalogo();
 
-        //-----------------------rimuovi elemento dato un codice ISBN-----------------------
+        //-----------------------Rimuovi elemento dato un codice ISBN-----------------------
 
         catalogo.rimuoviElemento("5414351");
 
-        System.out.println("\n\t--Catalogo una volta rimosso un elemento--");
+        System.out.println("\n\t⬇️Catalogo una volta rimosso un elemento️️⬇️");
         catalogo.stampaCatalogo();
+
+
+        //-----------------------Ricerca per ISBN-----------------------
+
+        System.out.println("\n\t⬇️Elemento cercato per ISBN⬇️");
+        catalogo.ricercaPerIsbn("56786544").ifPresent(System.out::println);
+
     }
+
 }

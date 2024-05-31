@@ -18,7 +18,7 @@ public class Libro extends ElementoCatalogo {
 
     @Override
     public String toString() {
-        return "\tLibro [" +
+        return "\tLibro📖 [" +
                 "Autore= " + autore +
                 ", ISBN= " + isbn +
                 ", Titolo= " + titolo +
