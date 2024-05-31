@@ -2,7 +2,11 @@ package Bibliografico;
 
 import Bibliografico.entities.ElementoCatalogo;
 import Bibliografico.entities.Libro;
+import Bibliografico.entities.Rivista;
+import org.apache.commons.io.FileUtils;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -54,5 +58,31 @@ public class Catalogo {
                 .collect(Collectors.toList());
     }
 
-    
+
+    //salva su disco archivio
+    public void salvaSuDisco() {
+        List<String> lines = new ArrayList<>();
+        for (ElementoCatalogo elemento : catalogo) {
+            if (elemento instanceof Libro) {
+                Libro libro = (Libro) elemento;
+                lines.add("Libro-" + libro.getIsbn() + "-" + libro.getTitolo() + "-" +
+                        libro.getAnnoPubblicazione() + "-" + libro.getNumeroPagine() + "-" +
+                        libro.getAutore());
+            } else if (elemento instanceof Rivista) {
+                Rivista rivista = (Rivista) elemento;
+                lines.add("Rivista-" + rivista.getIsbn() + "-" + rivista.getTitolo() + "-" +
+                        rivista.getAnnoPubblicazione() + "-" + rivista.getNumeroPagine() + "-" +
+                        rivista.getPeriodicita());
+            }
+        }
+        try {
+            File file = new File("src/main/java/Bibliografico/Archivio.txt");
+            FileUtils.writeLines(file, lines);
+            System.out.println("Archivio salvato con successo su disco.");
+        } catch (IOException err) {
+            System.err.println("Errore durante il salvataggio dell'archivio: " + err.getMessage());
+        }
+    }
+
+
 }
