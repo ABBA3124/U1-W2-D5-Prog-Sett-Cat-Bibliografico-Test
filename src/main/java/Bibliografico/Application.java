@@ -39,7 +39,7 @@ public class Application {
 
         //-----------------------Ricerca per Anno di Pubblicazione-----------------------
         System.out.println("\n\t⬇️Elemento cercato per Anno di Pubblicazione⬇️");
-        catalogo.ricercaPerAnnoPubblicazione(1996).forEach(System.out::println);
+        catalogo.ricercaPerAnnoPubblicazione(1996);
 
 
         //-----------------------Ricerca per Autore-----------------------

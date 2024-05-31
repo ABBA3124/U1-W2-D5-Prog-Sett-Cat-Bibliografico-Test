@@ -58,11 +58,19 @@ public class Catalogo {
 
 
     //ricerca per anno pubblicazione
-    public List<ElementoCatalogo> ricercaPerAnnoPubblicazione(int anno) {
-        return catalogo.stream()
+    public void ricercaPerAnnoPubblicazione(int anno) {
+        List<ElementoCatalogo> risultati = catalogo.stream()
                 .filter(elemento -> elemento.getAnnoPubblicazione() == anno)
                 .collect(Collectors.toList());
+
+        if (!risultati.isEmpty()) {
+            System.out.println("Elementi trovati per l'anno " + anno + ":");
+            risultati.forEach(System.out::println);
+        } else {
+            System.out.println("Nessun elemento trovato per l'anno " + anno);
+        }
     }
+
 
     //ricerca per autore
     public List<Libro> ricercaPerAutore(String autore) {
