@@ -13,9 +13,9 @@ public class Application {
         catalogo.stampaCatalogo();
 
         //add elementi al catalogo
-        catalogo.aggiungiElemento(new Libro("1234548", "Il Signore degli Anelli", 1954, 1000, "J.R.R. Tolkien"));
-        catalogo.aggiungiElemento(new Libro("2564644", "La libreria dei gatti neri", 1996, 24, "Piergiorgio Pulixi"));
-        catalogo.aggiungiElemento(new Libro("5414351", "io sono l'abisso", 2016, 367, "Donato Carrisi"));
+        catalogo.aggiungiElemento(new Libro("1234548", "Il Signore degli Anelli", 1954, 1000, "J.R.R. Tolkien", "fantasy"));
+        catalogo.aggiungiElemento(new Libro("2564644", "La libreria dei gatti neri", 1996, 24, "Piergiorgio Pulixi", "horror"));
+        catalogo.aggiungiElemento(new Libro("5414351", "io sono l'abisso", 2016, 367, "Donato Carrisi", "action"));
 
         catalogo.aggiungiElemento(new Rivista("56786544", "National Geographic", 1996, 100, Rivista.Periodicita.MENSILE));
         catalogo.aggiungiElemento(new Rivista("43168944", "Focus", 2024, 52, Rivista.Periodicita.SETTIMANALE));
@@ -26,11 +26,11 @@ public class Application {
 
         //-----------------------Rimuovi elemento dato un codice ISBN-----------------------
 
-        catalogo.rimuoviElemento("5414351");
-
         System.out.println("\n\t⬇️Catalogo una volta rimosso un elemento️️⬇️");
+        catalogo.rimuoviElemento("5414351");
         catalogo.stampaCatalogo();
 
+        catalogo.rimuoviElemento("51654564165165464"); //inserito per mostrare avviso inesistente o errato
 
         //-----------------------Ricerca per ISBN-----------------------
 

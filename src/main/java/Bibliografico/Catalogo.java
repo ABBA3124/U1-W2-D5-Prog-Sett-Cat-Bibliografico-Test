@@ -30,10 +30,18 @@ public class Catalogo {
         catalogo.forEach(System.out::println);
     }
 
+
     //rimuovi elemento tramite il codice ISBN
+
     public void rimuoviElemento(String isbn) {
-        catalogo.removeIf(elemento -> elemento.getIsbn().equals(isbn));
+        boolean rimosso = catalogo.removeIf(elemento -> elemento.getIsbn().equals(isbn));
+        if (rimosso) {
+            System.out.println("Elemento con ISBN " + isbn + " è stato rimosso.");
+        } else {
+            System.out.println("L'ISBN: " + isbn + " Risulta Errato o Inesistente." + " Verifica L'ISBN Inserito e/o Riprova");
+        }
     }
+
 
     //ricerca per ISBN
     public Optional<ElementoCatalogo> ricercaPerIsbn(String isbn) {
@@ -67,7 +75,8 @@ public class Catalogo {
                 Libro libro = (Libro) elemento;
                 lines.add("Libro-" + libro.getIsbn() + "-" + libro.getTitolo() + "-" +
                         libro.getAnnoPubblicazione() + "-" + libro.getNumeroPagine() + "-" +
-                        libro.getAutore());
+                        libro.getAutore() + "-" +
+                        libro.getGenere());
             } else if (elemento instanceof Rivista) {
                 Rivista rivista = (Rivista) elemento;
                 lines.add("Rivista-" + rivista.getIsbn() + "-" + rivista.getTitolo() + "-" +
@@ -93,7 +102,7 @@ public class Catalogo {
             for (String stringa : linee) {
                 String[] partiDaCaricare = stringa.split("-");
                 if (partiDaCaricare[0].equals("Libro")) {
-                    catalogo.add(new Libro(partiDaCaricare[1], partiDaCaricare[2], Integer.parseInt(partiDaCaricare[3]), Integer.parseInt(partiDaCaricare[4]), partiDaCaricare[5]));
+                    catalogo.add(new Libro(partiDaCaricare[1], partiDaCaricare[2], Integer.parseInt(partiDaCaricare[3]), Integer.parseInt(partiDaCaricare[4]), partiDaCaricare[5], partiDaCaricare[6]));
                 } else if (partiDaCaricare[0].equals("Rivista")) {
                     catalogo.add(new Rivista(partiDaCaricare[1], partiDaCaricare[2], Integer.parseInt(partiDaCaricare[3]), Integer.parseInt(partiDaCaricare[4]), Rivista.Periodicita.valueOf(partiDaCaricare[5])));
                 }
