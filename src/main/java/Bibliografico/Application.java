@@ -44,7 +44,7 @@ public class Application {
 
         //-----------------------Ricerca per Autore-----------------------
         System.out.println("\n\t⬇️Elemento cercato per Autore⬇️");
-        catalogo.ricercaPerAutore("Piergiorgio Pulixi").forEach(System.out::println);
+        catalogo.ricercaPerAutore("Piergiorgio Pulixi");
 
         // -----------------------Salva su disco-----------------------
 

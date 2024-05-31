@@ -73,12 +73,19 @@ public class Catalogo {
 
 
     //ricerca per autore
-    public List<Libro> ricercaPerAutore(String autore) {
-        return catalogo.stream()
+    public void ricercaPerAutore(String autore) {
+        List<Libro> risultati = catalogo.stream()
                 .filter(elemento -> elemento instanceof Libro)
                 .map(elemento -> (Libro) elemento)
                 .filter(libro -> libro.getAutore().equals(autore))
                 .collect(Collectors.toList());
+
+        if (!risultati.isEmpty()) {
+            System.out.println("Libri trovati per l'autore " + autore + ":");
+            risultati.forEach(System.out::println);
+        } else {
+            System.out.println("Nessun libro trovato per l'autore " + autore);
+        }
     }
 
 
