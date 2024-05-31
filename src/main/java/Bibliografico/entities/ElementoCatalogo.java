@@ -1,10 +1,10 @@
 package Bibliografico.entities;
 
 public abstract class ElementoCatalogo {
-    private String isbn;
-    private String titolo;
-    private int annoPubblicazione;
-    private int numeroPagine;
+    protected String isbn;
+    protected String titolo;
+    protected int annoPubblicazione;
+    protected int numeroPagine;
 
     public ElementoCatalogo(String isbn, String titolo, int annoPubblicazione, int numeroPagine) {
         this.isbn = isbn;

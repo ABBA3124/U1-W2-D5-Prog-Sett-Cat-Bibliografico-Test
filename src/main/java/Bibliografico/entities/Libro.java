@@ -20,6 +20,10 @@ public class Libro extends ElementoCatalogo {
     public String toString() {
         return "Libro{" +
                 "autore='" + autore + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", titolo='" + titolo + '\'' +
+                ", annoPubblicazione=" + annoPubblicazione +
+                ", numeroPagine=" + numeroPagine +
                 '}';
     }
 }

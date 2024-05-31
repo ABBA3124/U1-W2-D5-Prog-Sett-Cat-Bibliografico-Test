@@ -21,6 +21,10 @@ public class Rivista extends ElementoCatalogo {
     public String toString() {
         return "Rivista{" +
                 "periodicita=" + periodicita +
+                ", isbn='" + isbn + '\'' +
+                ", titolo='" + titolo + '\'' +
+                ", annoPubblicazione=" + annoPubblicazione +
+                ", numeroPagine=" + numeroPagine +
                 '}';
     }
 
