@@ -18,7 +18,8 @@ public class Catalogo {
     }
 
     //stampa catalogo
-    public void stampaCatalogoDebug() {
+    public void stampaCatalogo() {
+        System.out.println("---Lista catalogo---");
         catalogo.forEach(System.out::println);
     }
 

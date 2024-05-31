@@ -19,14 +19,15 @@ public class Rivista extends ElementoCatalogo {
 
     @Override
     public String toString() {
-        return "Rivista{" +
-                "periodicita=" + periodicita +
-                ", isbn='" + isbn + '\'' +
-                ", titolo='" + titolo + '\'' +
-                ", annoPubblicazione=" + annoPubblicazione +
-                ", numeroPagine=" + numeroPagine +
-                '}';
+        return "\tRivista [" +
+                "Periodicita= " + periodicita +
+                ", ISBN= " + isbn +
+                ", Titolo=" + titolo +
+                ", Anno di Pubblicazione= " + annoPubblicazione +
+                ", Numero di Pagine= " + numeroPagine +
+                ']';
     }
+
 
     public enum Periodicita {
         SETTIMANALE, MENSILE, SEMESTRALE

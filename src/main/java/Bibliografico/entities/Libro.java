@@ -18,12 +18,12 @@ public class Libro extends ElementoCatalogo {
 
     @Override
     public String toString() {
-        return "Libro{" +
-                "autore='" + autore + '\'' +
-                ", isbn='" + isbn + '\'' +
-                ", titolo='" + titolo + '\'' +
-                ", annoPubblicazione=" + annoPubblicazione +
-                ", numeroPagine=" + numeroPagine +
-                '}';
+        return "\tLibro [" +
+                "Autore= " + autore +
+                ", ISBN= " + isbn +
+                ", Titolo= " + titolo +
+                ", Anno di Pubblicazione= " + annoPubblicazione +
+                ", Numero di Pagine= " + numeroPagine +
+                "]";
     }
 }
