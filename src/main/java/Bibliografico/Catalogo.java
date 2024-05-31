@@ -19,8 +19,13 @@ public class Catalogo {
 
     //stampa catalogo
     public void stampaCatalogo() {
-        System.out.println("---Lista catalogo---");
+        System.out.println("***Lista catalogo***");
         catalogo.forEach(System.out::println);
+    }
+
+    //rimuovi elemento tramite il codice ISBN
+    public void rimuoviElemento(String isbn) {
+        catalogo.removeIf(elemento -> elemento.getIsbn().equals(isbn));
     }
 
 }
